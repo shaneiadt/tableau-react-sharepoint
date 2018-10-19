@@ -42,6 +42,9 @@ typings/
 # Optional npm cache directory
 .npm
 
+# Ignore Dist Production Build Folder
+dist/
+
 # Optional eslint cache
 .eslintcache
 
