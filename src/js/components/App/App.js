@@ -1,28 +1,23 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import tableau from 'tableau-api';
 
 class App extends Component{
 
-    constructor() {
-        super();
-        this.state = {
-            para: "This is a sample app rendered with React"
-        };
+    componentDidMount(){
+        this.initViz();
     }
 
-    textboxChangeHandler = (event) => {
-        this.setState({
-            para: event.target.value
-        });
+    initViz(){
+        const vizUrl = 'https://public.tableau.com/views/RegionalSampleWorkbook/Storms';  
+        const vizContainer = this.vizContainer;  
+        let viz = new window.tableau.Viz(vizContainer, vizUrl)  
     }
     
     render(){
         return(
-            <div>
-                <h1>Demo</h1>
-                <p>{this.state.para}</p>
-                <input type="text" onChange={this.textboxChangeHandler} placeholder="Type here for demo"></input>
-            </div>
+            <div ref={(div) => { this.vizContainer = div }}>
+            </div>  
         );
     }
 }
