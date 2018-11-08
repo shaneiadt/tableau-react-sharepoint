@@ -6,5 +6,5 @@ npm i
 
 npm start
 
-npm run buildssss
+npm run build
 ```
